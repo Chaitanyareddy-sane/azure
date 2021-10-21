@@ -1,0 +1,31 @@
+{
+	"name": "DelimitedText1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLake_ls",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"ds_p_dept": {
+				"type": "string",
+				"defaultValue": "10"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@concat(dataset().ds_p_dept,'.csv')",
+					"type": "Expression"
+				},
+				"fileSystem": "tables"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
