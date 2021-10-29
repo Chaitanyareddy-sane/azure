@@ -35,34 +35,8 @@
 							"fileExtension": ".txt"
 						}
 					},
-					"enableStaging": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"typeConversion": true,
-						"typeConversionSettings": {
-							"allowDataTruncation": true,
-							"treatBooleanAsNumber": false
-						}
-					}
-				},
-				"inputs": [
-					{
-						"referenceName": "EMP_dept_ds",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "DelimitedText1",
-						"type": "DatasetReference",
-						"parameters": {
-							"ds_p_dept": {
-								"value": "@pipeline().parameters.p_deptno",
-								"type": "Expression"
-							}
-						}
-					}
-				]
+					"enableStaging": false
+				}
 			}
 		],
 		"parameters": {

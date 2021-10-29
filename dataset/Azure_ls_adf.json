@@ -1,0 +1,37 @@
+{
+	"name": "Azure_ls_adf",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "sql_adf_ls",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "sid",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "sname",
+				"type": "varchar"
+			},
+			{
+				"name": "age",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "fee",
+				"type": "money",
+				"precision": 19,
+				"scale": 4
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "stu"
+		}
+	}
+}
