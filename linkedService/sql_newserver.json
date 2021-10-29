@@ -1,0 +1,16 @@
+{
+	"name": "sql_newserver",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=False;data source=azuresqlserverscr.database.windows.net;initial catalog=azuredb2;user id=adminsql",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI3OWNjNDMyZi0xOGFlLTQ0YTYtODk0Yy1hZTQ4N2Q4Yjk2MTkiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "local-self-ir",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
