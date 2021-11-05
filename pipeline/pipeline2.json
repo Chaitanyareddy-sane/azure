@@ -1,9 +1,9 @@
 {
-	"name": "child_copy",
+	"name": "pipeline2",
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy data1",
+				"name": "Sql_Alds",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -17,10 +17,6 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": {
-							"value": "@concat('select * from emp where deptno=',pipeline().parameters.p_deptno)",
-							"type": "Expression"
-						},
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
@@ -47,32 +43,20 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "EMP_dept_ds",
+						"referenceName": "AzureSql",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DelimitedText1",
-						"type": "DatasetReference",
-						"parameters": {
-							"ds_p_dept": {
-								"value": "@pipeline().parameters.p_deptno",
-								"type": "Expression"
-							}
-						}
+						"referenceName": "test",
+						"type": "DatasetReference"
 					}
 				]
 			}
 		],
-		"parameters": {
-			"p_deptno": {
-				"type": "string",
-				"defaultValue": "10"
-			}
-		},
 		"annotations": [],
-		"lastPublishTime": "2021-10-21T06:21:52Z"
+		"lastPublishTime": "2021-10-20T14:31:03Z"
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
 }
